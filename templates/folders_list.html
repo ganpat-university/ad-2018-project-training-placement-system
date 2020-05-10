@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="card-header sticky-top">
+<div class="container">
+<a href="{% url 'home' %}" class="btn bg-dark text-white">&larr; Back</a>
+</div>
+</div>
+<br>
+<div class="container">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Folders</th>
+    </tr>
+  </thead>
+
+{% for folder in total_folder %}
+
+<tbody>
+    <tr>
+      <td>{{ folder}}<a href='files_list/{{folder}}' class="pull-right">view uploads</a></td>
+    </tr>
+
+ 
+  </tbody>
+
+
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

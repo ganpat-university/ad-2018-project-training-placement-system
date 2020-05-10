@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="card-header sticky-top">
+<div class="container">
+<a href="{% url 'home' %}" class="btn bg-dark text-white">&larr; Back</a>
+<a href="{% url 'search_student' %}" class="btn bg-dark text-white">Search</a>
+
+</div>
+</div>
+<br>
+
+<div class="container">
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Full Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+
+{% for x in vs %}
+
+<tbody>
+    <tr>
+      <td><a href="{% url 'student_profile' x.s_id %}">{{ x.first_name}} {{ x.last_name }}</a> </td>
+      <td>{{ x.email}} | {{x.course}}</td>
+      <td>
+        <a href="{% url 'student_edit' x.s_id %}">edit</a> |
+        <a href="{% url 'student_delete' x.s_id %}">delete</a>
+      </td> 
+    </tr>
+
+ 
+  </tbody>
+  {% empty %}
+        <tr>
+          <td colspan="5">No data</td>
+        </tr>
+
+
+{% endfor %}
+
+</table>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}

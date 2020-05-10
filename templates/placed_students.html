@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card-header sticky-top">
+<div class="container">
+<a href="{% url 'placement' %}" class="btn bg-dark text-white">&larr; Back</a>
+</div>
+</div>
+<br>
+<div class="container">
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Enrollment No.</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Branch</th>
+                <th>Placed In</th>
+                <th>Position</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+            {% for student,company in obj_list %}
+                <tr>
+                    <td>{{ student.enrollment_number }}</td>
+                    <td>{{ student.first_name }} {{ student.last_name }}</td>
+                    <td>{{ student.email }}</td>
+                    <td>{{ student.branch }}</td>
+                    <td>{{ company.name }}</td>
+                    <td>{{ company.position }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+</div>
+<br><br><br><br>
+{% endblock %}

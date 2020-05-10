@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card-header sticky-top">
+<div class="container">
+<a href="{% url 'home' %}" class="btn bg-dark text-white">Back</a>
+</div>
+</div>
+
+<br>
+<div class="container">
+<h3 style="color:red">You didn't selected any company yet.</h3>
+<b>The issue may be temporary.Please go back and select company available in suggested companies then try again. If the problem persists, please get in touch with support team.</b>
+</div>
+
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<div class="card-header sticky-top bg-light">
+<div class="container">
+<a href="{% url 'viewstudent' %}" class="btn bg-dark text-white">&larr; Back</a>
+
+</div>
+</div>
+<br>
+  <div class="container">
+	
+	<form method="get">
+    <div class="well">
+      <h4 style="margin-top: 0">Filter</h4>
+      <div class="row">
+        <div class="form-group col-sm-4 col-md-2">
+          {{ filter.form.first_name.label_tag }}
+          {% render_field filter.form.first_name class="form-control" %}
+        </div>
+
+        <div class="form-group col-sm-4 col-md-2">
+          {{ filter.form.last_name.label_tag }}
+          {% render_field filter.form.last_name class="form-control" %}
+        </div>
+        
+        
+        <div class="form-group col-sm-4 col-md-3">
+          {{ filter.form.email.label_tag }}
+          {% render_field filter.form.email class="form-control" %}
+        </div>
+
+        <div class="form-group col-sm-4 col-md-3">
+          {{ filter.form.CGPA.label_tag }}
+          {% render_field filter.form.CGPA class="form-control" %}
+        </div>
+
+        <div class="form-group col-sm-4 col-md-3">
+          {{ filter.form.gender.label_tag }}
+          {% render_field filter.form.gender class="form-control" %}
+        </div>
+
+        <div class="form-group col-sm-4 col-md-3">
+          {{ filter.form.enrollment_number.label_tag }}
+          {% render_field filter.form.enrollment_number class="form-control" %}
+        </div>
+
+        <div class="form-group col-sm-4 col-md-3">
+          {{ filter.form.branch.label_tag }}
+          {% render_field filter.form.branch class="form-control" %}
+        </div>
+
+        <div class="form-group col-sm-4 col-md-3">
+          {{ filter.form.placed.label_tag }}
+          {% render_field filter.form.placed class="form-control" %}
+        </div>
+        
+          </div>
+        </div>
+        <button type="submit" class="btn bg-dark text-white">Search</button>
+  </form>
+  <br>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Full Name</th>
+       	<th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for student in filter.qs %}
+        <tr>
+          <td><a href="{% url 'student_profile' student.s_id %}">{{ student.first_name }} {{ student.last_name }}</a></td>
+          <td>{{ student.email }}</td>
+          <td>
+        <a href="{% url 'student_edit' student.s_id %}">edit</a> |
+        <a href="{% url 'student_delete' student.s_id %}">delete</a>
+      </td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="5">No data</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+
+<br>
+<br>
+<br>
+{% endblock %}

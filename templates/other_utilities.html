@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card-header sticky-top">
+<div class="container">
+<a href="{% url 'home' %}" class="btn bg-dark text-white">&larr; Back</a>
+</div>
+</div>
+<br>
+<div class="container">
+
+<div class="card">
+	<div class="card-header sticky-top bg-light">
+    <h3><b>Other Utilities</b></h3>
+  </div>
+
+<div class="card-body">
+    <blockquote class="blockquote mb-0">
+      
+<div class="row">
+
+<div class="col-sm-6 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+        <a href="{% url 'export_student_csv' %}" class="btn btn-light"><h5>EXPORT STUDENTS CSV</h5></a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+        <a href="{% url 'export_company_csv' %}" class="btn btn-light"><h5>EXPORT COMPANIES CSV</h5></a>
+      </div>
+
+    </div>
+</div>
+
+
+    </blockquote>
+</div>
+
+
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      
+<div class="row">
+  <div class="col-sm-6 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+
+        <a href="{% url 'import_credential' %}" class="btn btn-light"><h5>IMPORT STUDENTS/STAFF CREDENTIAL</h5></a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+
+        <a href="{% url 'export_credential' %}" class="btn btn-light"><h5>EXPORT STUDENTS/STAFF CREDENTIAL</h5></a>
+      </div>
+    </div>
+  </div>
+
+</div>
+    </blockquote>
+  </div>
+
+
+</div>
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}

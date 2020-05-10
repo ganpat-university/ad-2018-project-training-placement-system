@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card-header sticky-top">
+<div class="container">
+<a href="{% url 'home' %}" class="btn bg-dark text-white">Back</a>
+</div>
+</div>
+
+<br>
+<div class="container">
+<h1 style="color:red">Profile not found.</h1>
+<b>The issue may be temporary.Please go back and try again. If the problem persists, please get in touch with support team.</b>
+</div>
+
+{% endblock %}

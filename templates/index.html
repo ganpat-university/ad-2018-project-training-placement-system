@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+<br>
+
+
+<div class="card">
+	<div class="card-header sticky-top bg-light">
+    <h3><b>DASHBOARD</b></h3>
+  </div>
+  {% if user.is_staff %}   
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+
+
+
+<div class="row">
+  <div class="col-sm-3 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+
+        <a href="{% url 'viewstudent' %}" class="btn btn-light"><h5>VIEW STUDENTS</h5></a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+        <a href="{% url 'viewcompany' %}" class="btn btn-light"><h5>VIEW COMPANIES</h5></a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+        <a href="student_create" class="btn btn-light"><h5>ADD STUDENTS</h5></a>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-sm-3 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+        <a href="company_create" class="btn btn-light"><h5>ADD COMPANIES</h5></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </blockquote>
+  </div>
+
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      
+<div class="row">
+  <div class="col-sm-6 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+
+        <a href="{% url 'folders_list' %}" class="btn btn-light"><h5>STUDENT UPLOADS</h5></a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+
+        <a href="{% url 'post' %}" class="btn btn-light"><h5>CREATE ANNOUNCEMENTS/EVENTS</h5></a>
+      </div>
+    </div>
+  </div>
+</div>
+    </blockquote>
+  </div>
+
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      
+<div class="row">
+  <div class="col-sm-4 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+
+        <a href="{% url 'placement' %}" class="btn btn-light"><h5>PLACEMENT</h5></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-8 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+
+        <a href="{% url 'announcement_list' %}" class="btn btn-light"><h5>ANNOUNCEMENTS/EVENTS</h5></a>
+      </div>
+    </div>
+  </div>
+
+</div>
+    </blockquote>
+  </div>
+
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      
+<div class="row">
+
+<div class="col-sm-8 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+        <a href="{% url 'other_utilities' %}" class="btn btn-light"><h5>OTHER UTILITIES</h5></a>
+      </div>
+    </div>
+  </div>
+
+<div class="col-sm-4 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+        <a href="{% url 'current_users' %}" class="btn btn-light"><h5>ONLINE USERS</h5></a>
+      </div>
+    </div>
+  </div>
+
+    </blockquote>
+</div>
+
+{% else %}
+
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+
+<div class="row">
+  <div class="col-sm-3 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+
+        <a href="{% url 'my_profile' %}" class="btn btn-light"><h5>My Profile</h5></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-3 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+
+        <a href="{% url 'upload_document' %}" class="btn btn-light"><h5>Upload Documents</h5></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+
+        <a href="{% url 'announcement_list' %}" class="btn btn-light"><h5>ANNOUNCEMENTS/EVENTS</h5></a>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</blockquote>
+</div>
+
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+
+<div class="row">
+  <div class="col-sm-4 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+
+        <a href="{% url 'suggested_company' %}" class="btn btn-light"><h5>SUGGESTED COMPANIES</h5></a>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+
+        <a href="{% url 'my_company' %}" class="btn btn-light"><h5>SELECTED COMPANY</h5></a>
+      </div>
+    </div>
+  </div>
+
+</div>
+</blockquote>
+</div>
+
+
+{% endif %}
+
+<br>
+ <h6 align="right">Last Login : {{user.last_login}}</h6>
+
+</div>
+<br>
+<br>
+<br>
+{% endblock %}

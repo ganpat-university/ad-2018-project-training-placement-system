@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card-header sticky-top">
+<div class="container">
+<a href="{% url 'home' %}" class="btn bg-dark text-white">&larr; Back</a>
+</div>
+</div>
+<br>
+<div class="container">
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Companies</th>
+    </tr>
+  </thead>
+
+{% for company in companies %}
+<tbody>
+    <tr>
+<td>{{company.name}} ({{company.position}}) | Package:{{company.package}}
+<h6 class="pull-right"><a href="{% url 'company_profile' company.c_id %}">View Details</a></h6></td>
+<td><a href="{% url 'company_select' company.c_id %}" class="btn btn-dark">SELECT</a></td>
+    </tr>
+</tbody>
+
+{% empty %}
+<tr>
+          <td colspan="5">No company available</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+<br>
+<br>
+<br>
+
+{% endblock %}

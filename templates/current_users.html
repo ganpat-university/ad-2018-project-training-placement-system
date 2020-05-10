@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card-header sticky-top">
+<div class="container">
+<a href="{% url 'home' %}" class="btn bg-dark text-white">&larr; Back</a>
+</div>
+</div>
+<br>
+<div class="container">
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Active Users</th>
+      <th scope="col">Login Since</th>
+
+    </tr>
+  </thead>
+
+{% for u in users %}
+
+<tbody>
+    <tr>
+      <td><h5 style="color:green">{{ u.username }} ({{u.email}}) <b>•</b></h5></td>
+      <td><h5>{{u.last_login}}</h5></td>
+    </tr>
+
+ 
+  </tbody>
+
+
+{% endfor %}
+
+</table>
+
+
+</div>
+
+{% endblock %}

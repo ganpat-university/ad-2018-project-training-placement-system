@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card-header sticky-top">
+<div class="container">
+<a href="{% url 'home' %}" class="btn bg-dark text-white">Back</a>
+</div>
+</div>
+<br>
+<div class="container">
+
+
+<div class="card">
+	<div class="card-header sticky-top bg-light">
+    <h3><b>Placement</b></h3>
+  </div>
+
+<div class="card-body">
+    <blockquote class="blockquote mb-0">
+      
+<div class="row">
+
+<div class="col-sm-6 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+        <a href="{% url 'place_student' %}" class="btn btn-light"><h5>START PLACEMENT</h5></a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+        <a href="{% url 'reset_profiles' %}" class="btn btn-light"><h5>RESET ALL PROFILES</h5></a>
+      </div>
+
+    </div>
+</div>
+</div>
+</blockquote>
+</div>
+
+<div class="card-body">
+    <blockquote class="blockquote mb-0">
+
+<div class="row">
+
+<div class="col-sm-6 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+        <a href="{% url 'placed_students' %}" class="btn btn-light"><h5>VIEW PLACED STUDENTS</h5></a>
+      </div>
+    </div>
+  </div>
+
+<div class="col-sm-6 text-center">
+    <div class="card">
+      <div class="card-body bg-light">
+        <a href="{% url 'generate_placement_report' %}" class="btn btn-light"><h5>GENERATED PLACEMENT REPORT</h5></a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+    </blockquote>
+</div>
+
+
+</div>
+
+
+
+
+</div>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

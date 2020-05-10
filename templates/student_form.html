@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="card-header sticky-top">
+<div class="container">
+<a href="{% url 'home' %}" class="btn bg-dark text-white">&larr; Back</a>
+</div>
+</div>
+<br>
+<div class="container">
+
+<form class="form-horizontal" method="post">{% csrf_token %}
+
+	<main class="login-form">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-header">Student Form</div>
+                    <div class="card-body">
+    {% crispy form %}
+    
+    </div>
+    <button type="submit" class="btn btn-dark">Submit</button>
+    				</div>
+    				</div>
+    			</div>
+            </form>
+            <div class="row justify-content-center">
+            <h1>OR</h1>
+            </div>
+            <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-header">UPLOAD</div>
+                    <div class="card-body">
+                    <a href="{% url 'import_student_data' %}" class="btn btn-dark">CLICK HERE UPLOAD CSV</a>
+   
+                    </div>
+                    </div>
+                </div>
+            </div>
+    	</div>
+    
+<br><br><br><br><br><br>
+
+{% endblock %}

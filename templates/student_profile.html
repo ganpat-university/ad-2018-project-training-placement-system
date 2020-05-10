@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card-header sticky-top">
+<div class="container">
+{% if user.is_staff %}
+<a href="{% url 'viewstudent' %}" class="btn bg-dark text-white">&larr; Back</a>
+{% else %}
+<a href="{% url 'home' %}" class="btn bg-dark text-white">Back</a>
+{% endif %}
+</div>
+</div>
+<br>
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-header">Personal Information</div>
+                    <div class="card">
+  					<div class="card-body">
+    				<blockquote class="blockquote mb-0">
+    				
+
+                    	<h5><b>Name: </b>{{object.first_name}} {{object.last_name}}</h5>
+                        <h5><b>Enrollment No.: </b>{{object.enrollment_number}}</h5>
+                        <h5><b>Email: </b>{{object.email}}</h5>
+                        <h5><b>Phone No.: </b>{{object.phone}}</h5>
+                        <h5><b>Birth Date: </b>{{object.birth_date}}</h5>
+                        <h5><b>Gender: </b>{{object.gender}}</h5>
+                        <h5><b>Permanent Address: </b>{{object.permanent_address}}</h5>
+                        <h5><b>Current Address: </b>{{object.current_address}}</h5>
+                        <h5><b>Aadhaar No.: </b>{{object.aadhaar_number}}</h5>
+
+    				</blockquote>
+  					</div>
+					</div>
+    				</div>
+                    <br>
+                <div class="card">
+                    <div class="card-header">HSC Information</div>
+                    <div class="card">
+                    <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                    
+
+                        <h5><b>School Name: </b>{{object.HSC_school_name}}</h5>
+                        <h5><b>Board: </b>{{object.HSC_board}}</h5>
+                        <h5><b>Passing Year: </b>{{object.HSC_year}}</h5>
+                        <h5><b>Score: </b>{{object.HSC_marks}}</h5>
+
+                    </blockquote>
+                    </div>
+                    </div>
+                    </div>
+                    <br>
+                <div class="card">
+                    <div class="card-header">SSC Information</div>
+                    <div class="card">
+                    <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                    
+                        <h5><b>School Name: </b>{{object.SSC_school_name}}</h5>
+                        <h5><b>Board: </b>{{object.SSC_board}}</h5>
+                        <h5><b>Passing Year: </b>{{object.SSC_year}}</h5>
+                        <h5><b>Score: </b>{{object.SSC_marks}}</h5>
+
+                    </blockquote>
+                    </div>
+                    </div>
+                    </div>
+
+                    <br>
+                <div class="card">
+                    <div class="card-header">College Information</div>
+                    <div class="card">
+                    <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                    
+                        <h5><b>Name: </b>{{object.college_name}}</h5>
+                        <h5><b>University: </b>{{object.university}}</h5>
+                        <h5><b>Course: </b>{{object.course}}</h5>
+                        <h5><b>Branch: </b>{{object.branch}}</h5>
+                        <h5><b>Passing Year: </b>{{object.passing_year}}</h5>
+                        <h5><b>CGPA: </b>{{object.CGPA}}</h5>
+                        <h5><b>Active Backlog: </b>{{object.active_back}}</h5>
+                        <h5><b>Passive Backlog: </b>{{object.passive_back}}</h5>
+                        <h5><b>Placed: </b>{{object.placed}}</h5>
+
+                    </blockquote>
+                    </div>
+                    </div>
+                    </div>
+
+
+
+
+    			</div>
+    		</div>
+
+<br>
+<br>
+<br>
+<br>
+</div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card-header sticky-top">
+<div class="container">
+<a href="{% url 'home' %}" class="btn bg-dark text-white">Back</a>
+</div>
+</div>
+<br>
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-header">Company Info</div>
+                    <div class="card">
+  					<div class="card-body">
+    				<blockquote class="blockquote mb-0">
+    				
+                    	<h5><b>Name: </b>{{object.name}}</h5>
+                        <h5><b>Position: </b>{{object.position}}</h5>
+                        <h5><b>Package: </b>{{object.package}} LPA</h5>
+                        <h5><b>Email: </b>{{object.email}}</h5>
+                        <h5><b>Address: </b>{{object.address}}</h5>
+                        <h5><b>Website: </b>{{object.website}}</h5>
+                        <h5><b>Required Recruitment: </b>{{object.required_recruitment}}</h5>
+                        <h5><b>Other Details: </b>{{object.other_details}}</h5>
+                        
+    				</blockquote>
+  					</div>
+					</div>
+    				</div>
+
+    			</div>
+    		</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}
